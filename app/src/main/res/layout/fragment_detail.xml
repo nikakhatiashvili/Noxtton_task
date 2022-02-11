@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.detail.DetailFragment">
+
+    <ImageView
+        android:id="@+id/Goback"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_go_back_arrow_svgrepo_com"
+        app:layout_constraintEnd_toStartOf="@+id/gith_FullName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gith_FullName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        tools:text="Expense Tracker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gith_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gith_FullName"
+        tools:text="Expense Tracker" />
+
+    <ImageView
+        android:id="@+id/GithubItemImageView"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/white_eye"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gith_description" />
+
+    <TextView
+        android:id="@+id/gith_star_count"
+        style="@style/TextAppearance.Custom.Default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/white"
+        android:maxLength="100"
+        android:maxLines="@integer/material_motion_duration_medium_2"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@id/GithubItemImageView"
+        app:layout_constraintTop_toBottomOf="@+id/gith_description"
+        tools:text="200 Stars" />
+
+    <ImageView
+        android:id="@+id/GithubPrivacyImageView"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/ic_issues_svgrepo_com"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GithubItemImageView" />
+
+    <TextView
+        android:id="@+id/gith_public"
+        style="@style/TextAppearance.Custom.Default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="24dp"
+        android:maxLength="100"
+        android:maxLines="@integer/material_motion_duration_medium_2"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@+id/GithubPrivacyImageView"
+        app:layout_constraintTop_toBottomOf="@+id/gith_star_count"
+        tools:text="200" />
+
+    <ImageView
+        android:id="@+id/GithubForkImageView"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_fork_svgrepo_com"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GithubPrivacyImageView" />
+
+
+    <TextView
+        android:id="@+id/gith_forks"
+        style="@style/TextAppearance.Custom.Default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="24dp"
+        android:maxLength="100"
+        android:textColor="@color/white"
+        android:maxLines="@integer/material_motion_duration_medium_2"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@+id/GithubPrivacyImageView"
+        app:layout_constraintTop_toBottomOf="@+id/gith_public"
+        tools:text="30" />
+
+
+    <TextView
+        android:id="@+id/gith_branch"
+        style="@style/TextAppearance.Custom.Default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"
+        android:maxLength="100"
+        android:maxLines="@integer/material_motion_duration_medium_2"
+        android:text="Default Branch:"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GithubForkImageView" />
+
+    <TextView
+        android:id="@+id/gith_main_branch"
+        style="@style/TextAppearance.Custom.Default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        android:maxLength="100"
+        android:maxLines="@integer/material_motion_duration_medium_2"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@+id/gith_branch"
+        app:layout_constraintTop_toBottomOf="@+id/GithubForkImageView" />
+
+    <ImageView
+        android:id="@+id/GithublangImageView"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/ic_coding_svgrepo_com"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gith_branch" />
+
+    <TextView
+        android:id="@+id/gith_main_Lang"
+        style="@style/TextAppearance.Custom.Default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="12dp"
+        android:maxLength="100"
+        android:maxLines="@integer/material_motion_duration_medium_2"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@+id/GithublangImageView"
+        app:layout_constraintTop_toBottomOf="@+id/gith_branch"
+        tools:text="Javascript" />
+
+    <Button
+        android:id="@+id/appCompatButton"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/gray"
+        android:text="See repo on google"
+        android:textSize="9sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GithublangImageView" />
+
+
+    <ImageView
+        android:id="@+id/saveImg"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="28dp"
+        android:src="@drawable/ic_heart_svgrepo_com"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gith_description" />
+
+
+    <TextView
+        android:id="@+id/gith_update"
+        style="@style/TextAppearance.Custom.Default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="100"
+        android:maxLines="@integer/material_motion_duration_medium_2"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/appCompatButton"
+        app:layout_constraintTop_toBottomOf="@+id/gith_main_branch" />
+
+    <TextView
+        android:id="@+id/gith_create"
+        style="@style/TextAppearance.Custom.Default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:maxLength="100"
+        android:maxLines="@integer/material_motion_duration_medium_2"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toEndOf="@+id/appCompatButton"
+        app:layout_constraintTop_toBottomOf="@+id/gith_main_branch" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/appCompatButton"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatButton" />
+
+    <TextView
+        android:id="@+id/gith_owner"
+        style="@style/TextAppearance.Custom.Default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/white"
+        android:maxLength="100"
+        android:maxLines="@integer/material_motion_duration_medium_2"
+        android:text="@string/owner"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/gray"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:contentPadding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gith_owner"
+        app:layout_constraintVertical_bias="0.033">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/coinsItemMainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/avatar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/gith_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="name"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/avatar"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/repoImg"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/ic_repository_submodule_svgrepo_com"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/gith_repo" />
+
+            <TextView
+                android:id="@+id/gith_repo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="repositories"
+                android:textColor="@color/blue"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/avatar"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <!--    <Button-->
+<!--        android:id="@+id/see_on_google"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
