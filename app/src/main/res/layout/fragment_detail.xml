@@ -197,7 +197,15 @@
         android:src="@drawable/ic_heart_svgrepo_com"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gith_description" />
-
+    <ImageView
+        android:id="@+id/deleteImg"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="28dp"
+        android:src="@drawable/ic_heart_svgrepo_com__1_"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gith_description" />
 
     <TextView
         android:id="@+id/gith_update"

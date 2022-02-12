@@ -28,7 +28,7 @@ data class Item(
     val is_template: Boolean?,
     val language: String?,
     val name: String?,
-
+    var existsInRoom:Boolean? = false,
     val open_issues_count: Int?,
     @Embedded val owner: Owner?,
 

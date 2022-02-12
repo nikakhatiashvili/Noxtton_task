@@ -29,6 +29,9 @@ class HomeViewModel @Inject constructor(private val repository: GithubRepository
     private val _search: LiveData<List<RepositorySearch>> = roomRepository.getSearch()
     val search: LiveData<List<RepositorySearch>> get() = _search
 
+    private var _exisist = MutableLiveData<Boolean>()
+    val exisist: LiveData<Boolean> = _exisist
+
     fun search(userInput: String) {
         searchJob?.cancel() // cancel previous job when user enters new letter
         searchJob = viewModelScope.launch(Dispatchers.IO) {
@@ -47,8 +50,5 @@ class HomeViewModel @Inject constructor(private val repository: GithubRepository
             }
         }
     }
-
-
-
 
 }

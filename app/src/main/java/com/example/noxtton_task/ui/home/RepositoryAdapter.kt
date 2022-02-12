@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.noxtton_task.R
 import com.example.noxtton_task.databinding.RepoItemBinding
+import com.example.noxtton_task.listener.Listener
 import com.example.noxtton_task.model.GithubRepo
 import com.example.noxtton_task.model.Item
 
@@ -20,6 +22,8 @@ class RepositoryAdapter() : RecyclerView.Adapter<RepositoryAdapter.ViewHolder>()
 
     var onItemClick: ((Item) -> Unit)? = null
 
+    var onItem: ((Int) -> Boolean)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepositoryAdapter.ViewHolder {
         return ViewHolder(
             RepoItemBinding.inflate(
@@ -33,6 +37,7 @@ class RepositoryAdapter() : RecyclerView.Adapter<RepositoryAdapter.ViewHolder>()
     override fun onBindViewHolder(holder: RepositoryAdapter.ViewHolder, position: Int) {
         holder.bind()
     }
+
     override fun getItemCount() = data.size
 
 
@@ -43,7 +48,6 @@ class RepositoryAdapter() : RecyclerView.Adapter<RepositoryAdapter.ViewHolder>()
         fun bind() {
             currentData = data[adapterPosition]
             with(binding) {
-//                GithubDescriptionTextView.visibility = View.GONE
                 root.setOnClickListener {
                     onItemClick?.invoke(currentData)
                 }
@@ -52,6 +56,9 @@ class RepositoryAdapter() : RecyclerView.Adapter<RepositoryAdapter.ViewHolder>()
                 }else{
                     GithubDescriptionTextView.visibility = View.VISIBLE
                 }
+                if (currentData.existsInRoom!!){
+                    GithubItemNameTextView.visibility = View.GONE
+                }
                 GithubItemSymbolTextView.text = currentData.stargazers_count.toString()
                 GithubItemNameTextView.text = currentData.full_name
                 GithubDescriptionTextView.text = currentData.description
@@ -59,6 +66,7 @@ class RepositoryAdapter() : RecyclerView.Adapter<RepositoryAdapter.ViewHolder>()
                 GithubUpdateTextView.text =
                     "Updated at " + currentData.updated_at?.dropLast(10)
             }
+            onItem?.invoke(currentData.id!!)
         }
     }
 }

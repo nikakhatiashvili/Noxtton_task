@@ -67,15 +67,25 @@ class DetailFragment : Fragment() {
                 Glide.with(context!!).load(item.owner?.avatar_url).into(avatar)
             }
         }
+        detailViewModel.exists(item.id!!)
         binding.saveImg.setOnClickListener {
-            detailViewModel.exists(item.id!!)
+            detailViewModel.addItem(item)
+            binding.saveImg.visibility = View.GONE
+            binding.deleteImg.visibility = View.VISIBLE
+        }
+        binding.deleteImg.setOnClickListener {
+            detailViewModel.delete(item.id!!)
+            binding.saveImg.visibility = View.VISIBLE
+            binding.deleteImg.visibility = View.GONE
         }
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             detailViewModel.exisist.observe(viewLifecycleOwner){
                 if (it){
-                    detailViewModel.delete(item.id!!)
+                    binding.saveImg.visibility = View.GONE
+                    binding.deleteImg.visibility = View.VISIBLE
                 }else{
-                    detailViewModel.addItem(item)
+                    binding.saveImg.visibility = View.VISIBLE
+                    binding.deleteImg.visibility = View.GONE
                 }
             }
         }

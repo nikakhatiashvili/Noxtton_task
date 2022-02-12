@@ -30,6 +30,8 @@
             app:layout_constraintTop_toBottomOf="@id/GithubDescriptionTextView"
             app:layout_constraintStart_toStartOf="parent" />
 
+
+
         <TextView
             android:id="@+id/GithubItemNameTextView"
             style="@style/TextAppearance.Custom.Default"

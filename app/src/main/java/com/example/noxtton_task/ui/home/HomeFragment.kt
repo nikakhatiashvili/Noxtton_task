@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
     private val homeViewModel: HomeViewModel by viewModels()
 
     private val binding get() = _binding!!
-
+    private  var exists:Boolean? = null
     private lateinit var adapter: RepositoryAdapter
     private lateinit var searchAdapter: SearchAdapter
 
@@ -55,9 +55,9 @@ class HomeFragment : Fragment() {
         with(binding) {
             recyclerview.adapter = adapter
             recyclerview.layoutManager = LinearLayoutManager(requireContext())
-            amountEt.doAfterTextChanged {
+            search.doAfterTextChanged {
                 viewLifecycleOwner.lifecycleScope.launch {
-                    val text = amountEt.text.toString()
+                    val text = search.text.toString()
                     if (checkText(text)) {
                         homeViewModel.search(text)
                     } else {
@@ -76,22 +76,25 @@ class HomeFragment : Fragment() {
             }
         }
         searchAdapter.onItemClick = {
-            binding.amountEt.setText(it)
+            binding.search.setText(it)
         }
         adapter.onItemClick = {
             d("sadasdfa",it.full_name.toString())
             val direction = HomeFragmentDirections.actionNavigationHomeToDetailFragment(it)
             findNavController().navigate(direction)
         }
-        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+        viewLifecycleOwner.lifecycleScope.launch {
             homeViewModel.repositories.observe(viewLifecycleOwner) {
-                if (!binding.amountEt.text?.isEmpty()!!){
+                if (!binding.search.text?.isEmpty()!!){
                     adapter.data = it
                 }
 
             }
         }
     }
+
+
+
 
     private fun checkText(str: String) = !str.isNullOrEmpty()
 

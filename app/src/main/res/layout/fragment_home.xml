@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/amount_et"
+        android:id="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:hint="@string/search_repository"
@@ -30,7 +30,7 @@
         android:textColor="@color/light_gray"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/amount_et" />
+        app:layout_constraintTop_toBottomOf="@+id/search" />
 
 
     <ImageView
@@ -43,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/amount_et"
+        app:layout_constraintTop_toBottomOf="@+id/search"
         app:layout_constraintVertical_bias="1.0" />
 
     <androidx.recyclerview.widget.RecyclerView
